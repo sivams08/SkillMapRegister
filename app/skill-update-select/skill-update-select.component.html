@@ -1,0 +1,79 @@
+<head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+                #customers {
+                    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+                
+                #customers td, #customers th {
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                }
+                
+                #customers tr:nth-child(even){background-color: #f2f2f2;}
+                
+                #customers tr:hover {background-color: #ddd;}
+                
+                #customers th {
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                    text-align: left;
+                    background-color: #4CAF50;
+                    color: white;
+                }
+                body {
+    color: blue;
+}
+
+h2 {
+    color: green;
+}
+#serif {
+    font-family: "Times New Roman", Times, serif;
+}
+                </style>
+      </head>
+    <div>
+        <h2 id="serif">Skill Update</h2>
+      <form>        
+          <table id="customers">
+              <thead>
+                  <tr>
+                     <th>Employee Id</th>    
+                    <th>Emplyee Name</th>
+                    <th>Email Id</th>
+                    <th>Mobile Number</th>
+                    <th>Designation</th>                  
+                    <th>Qualification</th> 
+                    <th>Experience</th>                     
+                    <th>Placement count</th> 
+                    <th>Batch handled</th>                     
+                  </tr>
+                </thead>
+                  <tbody>
+                      <tr *ngFor="let employee of employeemodel">
+                          <td>{{employee.employee_Id}}</td>
+                          <td>{{employee.emplyeeName}}</td>
+                          <td>{{employee.email_Id}}</td>
+                          <td>{{employee.mobileNumber}}</td>
+                          <td>{{employee.designation}}</td>                          
+                          <td>{{employee.qualification}}</td>
+                          <td>{{employee.experiance}}</td>
+                          <td>{{employee.placementCount}}</td>
+                          <td>{{employee.batchCount}}</td>
+                          <td><button  (click)="skillUpdate(employee)" type="submit" class="btn btn-primary"> Update </button></td> 
+                    </tr>
+                    </tbody>
+                    </table>
+    </form>
+      </div>
+      <div>
+          <app-skill-update [employee]="employeemod"></app-skill-update>
+      </div>

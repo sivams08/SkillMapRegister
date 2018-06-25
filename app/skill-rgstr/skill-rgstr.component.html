@@ -1,0 +1,54 @@
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+            #customers {
+                font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #customers tr:hover {background-color: #ddd;}
+            
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: #4CAF50;
+                color: white;
+            }
+            </style>
+  </head>
+
+<div *ngIf="employee">   
+  <form>
+      <div class="form-group"><label for="Employee Id">Employee Id: </label>{{employee.employee_Id}}</div>
+      <div class="form-group"> 
+          <input [(ngModel)]="employeemodel.batchCount" name="batchCount" placeholder="Batch Count">
+       </div>
+       <div class="form-group"> 
+          <input [(ngModel)]="employeemodel.experiance" name="batchCount" placeholder="experiance">
+       </div>
+       <div class="form-group"> 
+          <input [(ngModel)]="employeemodel.placementCount" name="batchCount" placeholder="Placement Count">
+       </div>
+       <div class="form-group"> 
+          <input [(ngModel)]="skillModel.certificate" name="batchCount" placeholder="Certification">
+       </div>
+       <div class="form-group"> 
+          <input [(ngModel)]="skillModel.skill" name="batchCount" placeholder="Skill">
+       </div>
+       <button (click)="skillRegister()" type="submit" class="btn btn-primary">Register</button>
+  </form> 
+</div>
